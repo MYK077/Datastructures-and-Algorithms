@@ -35,18 +35,57 @@ class LinkedList():
             node = node.next
         print(size)
 
-    # remove by data input
-    def removedByParticular(self, value):
-        if value == self.head:
-            self.head = self.head.next
-        
+    # remove by index
+    def removedAtParticularPosition(self, position):
+        curr_node = self.head
+        index = 1
+        if position <= 0:
+            print("position is negative or zero")
+            return
+        elif position == 1:
+            self.head = curr_node.next
+            return
+        while True:
+            prev_node = curr_node
+            curr_node = curr_node.next
+            if index == (position -1) :
+                prev_node.next = curr_node.next
+                return
+            index+= 1
 
 
     # insert at particular
-    def insertParticularItem(self, value):
-        return
+    def insertParticularItem(self, position ,value):
+        node =  Node(value)
+        curr_node = self.head
+        index  = 1
+        if position < 0 :
+            print("index is negative")
+        while True:
+            prev_node =  curr_node
+            curr_node = curr_node.next
+            if index == (position-1):
+                prev_node.next = node
+                node.next = curr_node
+                return
+            index+=1
+
+
 
     # delete with data input
+    def deleteWithDataInput(self,value):
+        curr_node = self.head
+        while True:
+            root_node = curr_node
+            curr_node = curr_node.next
+            if value == root_node.data:
+                self.head = curr_node
+                return
+            elif value == curr_node.data:
+                root_node.next = curr_node.next
+                return
+
+
 
 
 l1 = LinkedList()
@@ -56,9 +95,18 @@ l1.insert(2)
 l1.insert(3)
 l1.insert(4)
 l1.insert(5)
+l1.insert(6)
+l1.insert(7)
+l1.insert(8)
+l1.insert(9)
+l1.insert(10)
 
 l1.displaySize()
 
-l1.removedByParticular(1)
+l1.deleteWithDataInput(8)
+
+l1.insertParticularItem(5,90)
+
+l1.removedAtParticularPosition(3)
 
 l1.display()
