@@ -62,7 +62,8 @@ class LinkedList():
         if position <= 0 :
             print("index is negative or zero")
         elif position == 1:
-            self.head = curr_node.next
+            self.head = node
+            self.head.next = curr_node
             return
         while True:
             prev_node =  curr_node
@@ -106,10 +107,16 @@ l1.insert(10)
 
 l1.displaySize()
 
-# l1.deleteWithDataInput(8)
+l1.deleteWithDataInput(8)
+
+l1.display()
 
 l1.insertParticularItem(1,90)
+l1.insertParticularItem(1,93)
+l1.insertParticularItem(5,90)
 
-# l1.removedAtParticularPosition(3)
+l1.display()
+
+l1.removedAtParticularPosition(3)
 
 l1.display()
