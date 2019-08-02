@@ -12,4 +12,4 @@ class Solution(object):
         return False
 
 obj = Solution()
-print(obj.permutation("abc","cbad"))
+print(obj.permutation("abc","cba"))
