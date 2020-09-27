@@ -17,4 +17,4 @@ class Solution(object):
 
 
 obj = Solution()
-print(obj.stringCompression("aaABBBaddhhhhh"))
+print(obj.stringCompression("aahhhhhhhhjkj"))

@@ -9,14 +9,13 @@
 class Solution(object):
     def urlify(self,s):
         words = s.split()
+        url= ''
         pointer = 0
-        url = ''
-        for word in words:
+        for x in words:
             if pointer < len(words)-1:
-                url = url + word + "%20"
+                url = url + x + "%20"
+                pointer+=1
             else:
-                url = url + word
-            pointer += 1
-        return url
+                return url
 obj = Solution()
 print(obj.urlify("myk ydv jonh wick jason free human                 "))

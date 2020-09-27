@@ -17,12 +17,12 @@
 # ]
 class Solution(object):
     def rotateMatrix(self,matrix):
-        n = len(matrix)
-        print(n)
+        matrix.reverse()
+
+        for i in range(len(matrix)):
+            for j in range(i+1):
+                matrix[i][j],matrix[j][i] = matrix[j][i],matrix[i][j]
+        return matrix
 
 obj = Solution()
-obj.rotateMatrix([
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-])
+print(obj.rotateMatrix([[1,2,3],[4,5,6],[7,8,9]]))

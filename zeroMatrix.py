@@ -39,4 +39,4 @@ class Solution(object):
                     matrix [x][y] = 0
         return matrix
 obj = Solution()
-print(obj.setZeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]]))
+print(obj.setZeroes([[2,1,2,0],[3,4,5,2],[1,3,1,5]]))
