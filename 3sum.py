@@ -10,11 +10,25 @@
 class Solution():
     def findTriplets(self, nums):
         nums = sorted(nums)
+        output = set()
 
-        for i range(len(nums)):
+        for i in range(len(nums)-2):
             head = i + 1
             tail = (len(nums)-1)
 
+            while nums[i] < 0 and head < tail:
+                temp = nums[i] + nums[head] + nums[tail]
+
+                if temp == 0:
+                    output.add((nums[i], nums[head], nums[tail]))
+                    if head == tail:
+                        break
+                if temp < 0:
+                    head += 1
+                else:
+                    tail -= 1
+        return output
+
 
 a = Solution()
-a.findTriplets([-1, 0, 1, 2, -1, -4])
+print(a.findTriplets([-1, 0, 1, 2, -1, -4]))
