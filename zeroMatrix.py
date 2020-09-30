@@ -19,24 +19,23 @@ class Solution(object):
         :type matrix: List[List[int]]
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
-        matrix = matrix
-        value = "m"
         rows = len(matrix)
         cols = len(matrix[0])
+
+        r, c = set(), set()
 
         for x in range(rows):
             for y in range(cols):
                 if matrix[x][y] == 0:
-                    for k in range(rows):
-                        if matrix[k][y] != 0:
-                            matrix[k][y] = value
-                    for k in range(cols):
-                        if matrix[x][k] != 0:
-                            matrix[x][k] = value
+                    r.add(x)
+                    c.add(y)
+
         for x in range(rows):
             for y in range(cols):
-                if matrix[x][y] == value:
-                    matrix [x][y] = 0
+                if x in r or y in c:
+                    matrix[x][y] = 0
         return matrix
+
+
 obj = Solution()
-print(obj.setZeroes([[2,1,2,0],[3,4,5,2],[1,3,1,5]]))
+print(obj.setZeroes([[2, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]]))
