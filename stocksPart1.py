@@ -10,13 +10,10 @@
 #              Not 7-1 = 6, as selling price needs to be larger than buying price.
 
 import sys
-
-
 class Solution():
     def findMaxProfit(self, prices):
         maxm = 0
         minm = sys.maxsize
-        profit = []
         for i in range(len(prices)):
             if prices[i] < minm:
                 minm = prices[i]
