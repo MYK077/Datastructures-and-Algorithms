@@ -1,3 +1,5 @@
+# Root ---> Left ---> Right
+
 class Solution(object):
     def preorderTraversal(self, root):
         res = [] 
