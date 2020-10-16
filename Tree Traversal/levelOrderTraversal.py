@@ -15,7 +15,7 @@ class Solution(object):
         while queue:
             currLevel = []
             size = len(queue)
-            for x in range(0,size):
+            for _ in range(0,size):
                 node = queue.popleft()
                 if node and node.left:
                     queue.append(node.left)
