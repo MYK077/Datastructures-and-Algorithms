@@ -2,8 +2,10 @@
 # from right to left , level by level
 
 from collections import deque
+
+
 class Solution(object):
-    def levelOrder(self,root):
+    def levelOrder(self, root):
         """
          :type root: TreeNode
          :rtype: List[List[int]]
@@ -11,11 +13,10 @@ class Solution(object):
         if not root:
             return []
         queue, res = deque([root]), []
-        
         while queue:
             currLevel = []
             size = len(queue)
-            for _ in range(0,size):
+            for _ in range(0, size):
                 node = queue.popleft()
                 if node and node.left:
                     queue.append(node.left)
